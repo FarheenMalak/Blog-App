@@ -36,16 +36,16 @@ export class AuthService {
         }
     }
 
-async getCurrentUser() {
-    try {
-        return await this.account.get();
-        console.log("Constructed URL:", this.client.config.endpoint + t);
-    } catch (error) {
-        console.error("Error occurred while getting current user:", error);
-        throw error; // Re-throw the error to propagate it to the caller
-        console.log("Constructed URL:", this.client.config.endpoint + t);
+  async getCurrentUser() {
+        try {
+            return await this.account.get();
+        } catch (error) {
+            console.log("Appwrite serive :: getCurrentUser :: error", error);
+        }
+
+        return null;
     }
-}
+
 
     async logout() {
         try {
