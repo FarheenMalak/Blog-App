@@ -36,12 +36,14 @@ export class AuthService {
         }
     }
 
-    async getCurrentUser() {
-        try {
-            return await this.account.get();
-        } catch (error) {
-            console.log("Appwrite serive :: getCurrentUser :: error", error);
-        }
+async getCurrentUser() {
+    try {
+        return await this.account.get();
+    } catch (error) {
+        console.error("Error occurred while getting current user:", error);
+        throw error; // Re-throw the error to propagate it to the caller
+    }
+}
 
         return null;
     }
