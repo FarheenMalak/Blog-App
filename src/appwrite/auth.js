@@ -45,9 +45,6 @@ async getCurrentUser() {
     }
 }
 
-        return null;
-    }
-
     async logout() {
         try {
             await this.account.deleteSessions();
